@@ -1,0 +1,45 @@
+print("1 - Kalkulator")
+print("2 - Konwersja temperatur")
+print("3 - Srednia ocen")
+wybor = int(input("Wybierz opcje: "))
+
+if wybor == 1:
+    a = float(input("Pierwsza liczba: "))
+    b = float(input("Druga liczba: "))
+
+    print("Dodawanie:", a + b)
+    print("Odejmowanie:", a - b)
+    print("Mnozenie:", a * b)
+
+    if b != 0:
+        print("Dzielenie:", a / b)
+    else:
+        print("Nie mozna dzielic przez zero")
+
+elif wybor == 2:
+    w = input("C czy F: ")
+    t = float(input("Podaj temperature: "))
+
+    if w.lower() == "c":
+        print(f"{t}C = {t * 1.8 + 32}F")
+    elif w.lower() == "f":
+        print(f"{t}F = {(t - 32) / 1.8}C")
+
+elif wybor == 3:
+    n = int(input("Ile ocen: "))
+
+    suma = 0
+    for _ in range(n):
+        suma += float(input())
+
+    srednia = suma / n
+    print("Srednia:", srednia)
+
+    if srednia >= 3:
+        print("Uczen zdal")
+    else:
+        print("Uczen nie zdal")
+
+else:
+    print("Zly wybor")
+
