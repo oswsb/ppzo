@@ -1,0 +1,73 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("1 - Kalkulator");
+        Console.WriteLine("2 - Konwersja temperatur");
+        Console.WriteLine("3 - Srednia ocen");
+        Console.Write("Wybierz opcje: ");
+
+        int wybor = int.Parse(Console.ReadLine());
+
+        switch (wybor)
+        {
+            case 1:
+             
+                Console.Write("Pierwsza liczba: ");
+                double a = double.Parse(Console.ReadLine());
+
+                Console.Write("Druga liczba: ");
+                double b = double.Parse(Console.ReadLine());
+
+                Console.WriteLine("Dodawanie: " + (a + b));
+                Console.WriteLine("Odejmowanie: " + (a - b));
+                Console.WriteLine("Mnozenie: " + (a * b));
+
+                if (b != 0)
+                    Console.WriteLine("Dzielenie: " + (a / b));
+                else
+                    Console.WriteLine("Nie mozna dzielic przez zero");
+                break;
+
+            case 2:
+               
+                Console.Write("C czy F: ");
+                string w = Console.ReadLine();
+
+                Console.Write("Podaj temperature: ");
+                double t = double.Parse(Console.ReadLine());
+
+                if (w == "C" || w == "c")
+                    Console.WriteLine(t + "C = " + (t * 1.8 + 32) + "F");
+                else if (w == "F" || w == "f")
+                    Console.WriteLine(t + "F = " + ((t - 32) / 1.8) + "C");
+                break;
+
+            case 3:
+                
+                Console.Write("Ile ocen: ");
+                int n = int.Parse(Console.ReadLine());
+
+                double suma = 0;
+                for (int i = 0; i < n; i++)
+                {
+                    suma += double.Parse(Console.ReadLine());
+                }
+
+                double srednia = suma / n;
+                Console.WriteLine("Srednia: " + srednia);
+
+                if (srednia >= 3)
+                    Console.WriteLine("Uczen zdal");
+                else
+                    Console.WriteLine("Uczen nie zdal");
+                break;
+
+            default:
+                Console.WriteLine("Zly wybor");
+                break;
+        }
+    }
+}
