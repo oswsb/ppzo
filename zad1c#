@@ -47,7 +47,7 @@ class Program
 
             case 3:
                 
-                Console.Write("Ile ocen: ");
+                Console.Write("Ile ocen(pozniej kazda po enterze): ");
                 int n = int.Parse(Console.ReadLine());
 
                 double suma = 0;
